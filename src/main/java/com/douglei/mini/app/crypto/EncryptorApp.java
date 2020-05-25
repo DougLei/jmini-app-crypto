@@ -12,6 +12,7 @@ import com.douglei.tools.utils.StringUtil;
  * @author DougLei
  */
 class EncryptorApp extends CryptoRule{
+	private static final Scanner scanner = new Scanner(System.in);
 	private static final Encryptor valueEncryptor = new Encryptor();
 	private static final File targetFile = new File(System.getProperty("user.home") + File.separatorChar + "EncryptorApp" + File.separatorChar + "EncryptorApp.txt");
 	static {
@@ -20,10 +21,10 @@ class EncryptorApp extends CryptoRule{
 		}
 	}
 	
-	public void app(Scanner scanner) {
-		System.out.println("\n---------------------------------");
-		System.out.println("欢迎进入加密小程序");
+	public static void main(String[] args) {
 		System.out.println("---------------------------------");
+		System.out.println("欢迎进入加密小程序");
+		System.out.println("---------------------------------\n");
 		String str;
 		FileBufferedWriter writer = new FileBufferedWriter(targetFile);
 		try {
