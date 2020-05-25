@@ -11,23 +11,24 @@ import com.douglei.tools.utils.StringUtil;
  * 加密小程序
  * @author DougLei
  */
-public class EncryptorApp extends CryptoRule{
+class EncryptorApp extends CryptoRule{
 	private static final Encryptor valueEncryptor = new Encryptor();
-	private static final Scanner scanner = new Scanner(System.in);
-	private static final File targetFile = new File(System.getProperty("user.home") + File.separatorChar + "ValueEncryptorApp.txt");
+	private static final File targetFile = new File(System.getProperty("user.home") + File.separatorChar + "EncryptorApp.txt");
 	static {
 		if(targetFile.exists()) {
 			targetFile.delete();
 		}
 	}
 	
-	public static void main(String[] args) {
+	public void app(Scanner scanner) {
+		System.out.println("\n---------------------------------");
 		System.out.println("欢迎进入加密小程序");
+		System.out.println("---------------------------------");
 		String str;
 		FileBufferedWriter writer = new FileBufferedWriter(targetFile);
 		try {
 			do {
-				System.out.println("请输入你要加密的字符串, 如果想要结束, 请输入exit(不区分大小写):");
+				System.out.println("请输入你要加密的字符串, 如果想要结束, 请输入exit(不区分大小写)：");
 				str = scanner.next();
 				if(StringUtil.isEmpty(str)) {
 					System.out.println("请不要输入空字符串");
@@ -43,8 +44,7 @@ public class EncryptorApp extends CryptoRule{
 				writer.newLine();
 			}while(true);
 			writer.close();
-			System.out.println("加密结束, 请去以下文件中获取你的加密数据");
-			System.out.println(targetFile);
+			System.out.println("加密结束, 请去以下文件中获取你的加密数据 ========> " + targetFile);
 			System.out.println("注意: 每行数据------前的为原数据, ------后才是加密后的数据");
 			System.out.println("注意: 每行数据------前的为原数据, ------后才是加密后的数据");
 			System.out.println("注意: 每行数据------前的为原数据, ------后才是加密后的数据");
