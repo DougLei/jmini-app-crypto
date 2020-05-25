@@ -13,7 +13,7 @@ import com.douglei.tools.utils.StringUtil;
  */
 class EncryptorApp extends CryptoRule{
 	private static final Encryptor valueEncryptor = new Encryptor();
-	private static final File targetFile = new File(System.getProperty("user.home") + File.separatorChar + "EncryptorApp.txt");
+	private static final File targetFile = new File(System.getProperty("user.home") + File.separatorChar + "EncryptorApp" + File.separatorChar + "EncryptorApp.txt");
 	static {
 		if(targetFile.exists()) {
 			targetFile.delete();
