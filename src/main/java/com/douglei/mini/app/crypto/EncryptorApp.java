@@ -12,20 +12,16 @@ import com.douglei.tools.utils.StringUtil;
  * @author DougLei
  */
 class EncryptorApp extends CryptoRule{
-	private static final Scanner scanner = new Scanner(System.in);
-	private static final Encryptor valueEncryptor = new Encryptor();
-	private static final File targetFile = new File(System.getProperty("user.home") + File.separatorChar + "EncryptorApp" + File.separatorChar + "EncryptorApp.txt");
-	static {
-		if(targetFile.exists()) {
-			targetFile.delete();
-		}
-	}
-	
 	public static void main(String[] args) {
 		System.out.println("---------------------------------");
 		System.out.println("欢迎进入加密小程序");
 		System.out.println("---------------------------------\n");
 		String str;
+		
+		File targetFile = new File(System.getProperty("user.home") + File.separatorChar + "EncryptorApp" + File.separatorChar + "EncryptorApp.txt");
+		Scanner scanner = new Scanner(System.in);
+		Encryptor valueEncryptor = new Encryptor();
+		
 		FileBufferedWriter writer = new FileBufferedWriter(targetFile);
 		try {
 			do {
@@ -47,17 +43,12 @@ class EncryptorApp extends CryptoRule{
 			writer.close();
 			System.out.println("加密结束, 请去以下文件中获取你的加密数据 ========> " + targetFile);
 			System.out.println("注意: 每行数据------前的为原数据, ------后才是加密后的数据");
-			System.out.println("注意: 每行数据------前的为原数据, ------后才是加密后的数据");
-			System.out.println("注意: 每行数据------前的为原数据, ------后才是加密后的数据");
 			System.out.println("确认后, 直接关闭该窗口来结束程序");
 		} catch (IOException e) {
 			e.printStackTrace();
 			System.out.println("你的程序出问题了, 不要关闭该窗口, 并联系开发人员");
-			System.out.println("你的程序出问题了, 不要关闭该窗口, 并联系开发人员");
-			System.out.println("你的程序出问题了, 不要关闭该窗口, 并联系开发人员");
-			scanner.next();
-			scanner.next();
 		}
 		scanner.next();
+		scanner.close();
 	}
 }
