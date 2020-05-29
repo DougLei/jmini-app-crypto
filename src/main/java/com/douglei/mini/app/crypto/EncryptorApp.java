@@ -20,7 +20,7 @@ class EncryptorApp extends CryptoRule{
 		System.out.println("---------------------------------\n");
 		String str;
 		
-		File targetFile = new File(System.getProperty("user.home") + File.separatorChar + "encryptor-app" + File.separatorChar + "result.txt");
+		File targetFile = new File(System.getProperty("user.home") + File.separatorChar + ".encryptor-app" + File.separatorChar + "result.txt");
 		Encryptor valueEncryptor = new Encryptor();
 		FileBufferedWriter writer = new FileBufferedWriter(targetFile);
 		try {
