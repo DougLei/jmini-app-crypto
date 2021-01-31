@@ -4,8 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
-import com.douglei.tools.instances.file.writer.FileBufferedWriter;
-import com.douglei.tools.utils.StringUtil;
+import com.douglei.tools.StringUtil;
+import com.douglei.tools.file.writer.FileBufferedWriter;
 
 /**
  * 加密小程序
