@@ -17,12 +17,12 @@ class EncryptorApp extends CryptoRule{
 		System.out.println("---------------------------------");
 		System.out.println("欢迎进入加密小程序");
 		System.out.println("---------------------------------\n");
-		String str;
 		
+		String str = null;
 		File targetFile = new File(System.getProperty("user.home") + File.separatorChar + ".crypto-app" + File.separatorChar + "result.txt");
 		Encryptor valueEncryptor = new Encryptor();
-		FileBufferedWriter writer = new FileBufferedWriter(targetFile);
-		try {
+		
+		try (FileBufferedWriter writer = new FileBufferedWriter(targetFile)){
 			do {
 				System.out.println("请输入你要加密的字符串,  如果想要结束, 请输入exit（不区分大小写）：");
 				str = scanner.next();
@@ -39,7 +39,6 @@ class EncryptorApp extends CryptoRule{
 				writer.write(valueEncryptor.encrypt(str));
 				writer.newLine();
 			}while(true);
-			writer.close();
 			System.out.println("加密结束, 请去以下文件中获取你的加密数据 ========> " + targetFile);
 			System.out.println("确认后, 直接关闭该窗口来结束程序");
 		} catch (Exception e) {
